@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mobilno očitavanje – Ikariam</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .setup{padding:22px}.setup h2{margin-top:0}.steps{padding-left:22px}.steps li{margin:10px 0}
+    label{display:block;font:700 .82rem system-ui;color:var(--muted);margin:18px 0 6px}
+    input,textarea{width:100%;border:1px solid var(--line);border-radius:7px;background:white;padding:10px;font:14px system-ui}
+    textarea{height:90px;resize:vertical}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .bookmarklet,main a.button{display:inline-block;border:1px solid #9a7540;background:#f8e8c5;color:var(--ink);padding:9px 13px;border-radius:6px;font:700 14px system-ui;text-decoration:none}
+    .notice{padding:10px 12px;border-radius:7px;background:#e1ecdf;color:var(--green);font:600 14px system-ui}.notice.error{background:#f5ddd5;color:#963e2e}
+  </style>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">IKARIAM</p><h1>Mobilno očitavanje</h1><p>Jedan dodir, bez browser ekstenzije</p></div><a class="button" href="/">Nazad</a></header>
+    <section class="panel setup">
+      <p id="notice" class="notice">Bookmarklet će slati podatke na <strong id="backend"></strong>.</p>
+      <label for="ingestKey">Backend ključ — ostavi prazno ako ga ne koristiš</label>
+      <input id="ingestKey" type="password" autocomplete="off">
+      <h2>Postavljanje na telefonu</h2>
+      <ol class="steps">
+        <li>U browseru dodaj bilo koju stranicu u oznake i nazovi je <strong>Pošalji Ikariam poene</strong>.</li>
+        <li>Kopiraj kod ispod, zatim uredi tu oznaku i zamijeni njenu adresu kopiranim kodom.</li>
+        <li>Otvori Ikariam i Gusarsku tvrđavu, pa pokreni oznaku. Sačekaj zelenu potvrdu.</li>
+      </ol>
+      <textarea id="bookmarkletCode" readonly aria-label="Kod mobilne oznake"></textarea>
+      <div class="actions"><button id="copyBookmarklet" type="button">Kopiraj kod</button><a id="bookmarkletLink" class="bookmarklet" href="#">Pošalji Ikariam poene</a></div>
+    </section>
+  </main>
+  <script>document.querySelector("#backend").textContent=location.origin;</script>
+  <script src="mobile.js?v=1"></script>
+</body>
+</html>

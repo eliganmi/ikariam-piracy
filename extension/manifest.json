@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Ikariam gusarski poeni",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Šalje trenutne gusarske poene na vaš backend kada otvorite Gusarsku tvrđavu.",
   "permissions": ["storage"],
   "background": {
