@@ -42,8 +42,6 @@ Backend mora biti objavljen na javnoj HTTPS adresi, na primjer:
 https://poeni.example.com
 ```
 
-`http://localhost:8787` radi samo na računaru na kojem je backend pokrenut i nije dostupan koleginom telefonu. Obična LAN HTTP adresa također nije dovoljna jer HTTPS Ikariam stranica ne smije slati podatke prema nesigurnom HTTP backendu.
-
 ### Kreiranje mobilne oznake
 
 1. Na telefonu otvorite javnu adresu aplikacije, dodajući `/mobile.html`, na primjer:
