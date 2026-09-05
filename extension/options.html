@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ikariam gusarski poeni – postavke</title>
+  <style>
+    body{font:16px system-ui,sans-serif;max-width:640px;margin:48px auto;padding:0 20px;color:#2b2116;background:#f4ead5}label{display:block;margin:18px 0 6px;font-weight:700}input{box-sizing:border-box;width:100%;padding:10px;border:1px solid #8d744d;border-radius:6px}button{margin-top:20px;padding:10px 18px;border:0;border-radius:6px;background:#735124;color:white;font-weight:700}#status{margin-left:12px}
+  </style>
+</head>
+<body>
+  <h1>Postavke</h1>
+  <form id="settings">
+    <label for="backendUrl">Adresa backenda</label>
+    <input id="backendUrl" type="url" required placeholder="http://localhost:8787">
+    <label for="ingestKey">Ključ za slanje (opcionalno)</label>
+    <input id="ingestKey" type="password" autocomplete="off">
+    <button type="submit">Sačuvaj</button><span id="status" role="status"></span>
+  </form>
+  <script src="options.js"></script>
+</body>
+</html>

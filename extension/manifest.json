@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Ikariam gusarski poeni",
+  "version": "1.6.0",
+  "description": "Šalje trenutne gusarske poene na vaš backend kada otvorite Gusarsku tvrđavu.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "http://*.ikariam.gameforge.com/*",
+    "https://*.ikariam.gameforge.com/*",
+    "http://localhost:8787/*",
+    "http://127.0.0.1:8787/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.ikariam.gameforge.com/*",
+        "https://*.ikariam.gameforge.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ikariam-pirate-points@example.local",
+      "strict_min_version": "109.0"
+    }
+  }
+}

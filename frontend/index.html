@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ikariam – gusarski poeni</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>.leaderboard-panel{margin-top:24px}</style>
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="eyebrow">IKARIAM</p><h1>Gusarski poeni</h1><p>Zadnje očitano stanje po igraču</p></div>
+      <div id="connection" class="status">Povezivanje…</div>
+    </header>
+    <section class="panel">
+      <div class="toolbar"><span id="count">0 igrača</span><button id="refresh" type="button">Osvježi</button></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Igrač</th><th>Svijet</th><th>Server</th><th>Koordinate</th><th>Gusarski poeni</th><th>Zadnje očitanje</th></tr></thead>
+          <tbody id="players"><tr><td colspan="6" class="empty">Još nema poslanih podataka.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="panel leaderboard-panel">
+      <div class="toolbar"><span>Dnevna rang-lista</span><span id="leaderboardUpdated"></span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Pozicija</th><th>Igrač</th><th>Savez</th><th>Koordinate</th><th>Svijet</th><th>Server</th><th>Rang-poeni</th></tr></thead>
+          <tbody id="leaderboard"><tr><td colspan="7" class="empty">Rang-lista još nije očitana.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <template id="row"><tr><td data-cell="player"></td><td data-cell="world"></td><td data-cell="server"></td><td data-cell="coordinates"></td><td data-cell="points" class="points"></td><td data-cell="time"></td></tr></template>
+  <template id="leaderboardRow"><tr><td data-cell="rank"></td><td data-cell="rankingPlayer"></td><td data-cell="rankingAlliance"></td><td data-cell="rankingCoordinates"></td><td data-cell="rankingWorld"></td><td data-cell="rankingServer"></td><td data-cell="rankingPoints" class="points"></td></tr></template>
+  <script src="app.js?v=9"></script>
+</body>
+</html>
